@@ -7,7 +7,7 @@ const connectDB = require('./db/connect');
 require('dotenv').config();
 
 app.use(express.json());
-// static file to load frontend
+app.use(express.static('./public'));
 app.use('/api/v1/tasks', tasks);
 
 const start = async () => {
