@@ -7,13 +7,12 @@ const connectDB = require('./db/connect');
 require('dotenv').config();
 
 app.use(express.json());
+// static file to load frontend
 app.use('/api/v1/tasks', tasks);
 
 const start = async () => {
   try {
-    await connectDB(
-      'mongodb+srv://Kareemah:Ajimobi20_$$@taskmanager.epyzcdb.mongodb.net/task-manager?retryWrites=true&w=majority'
-    );
+    await connectDB(process.env.MONGO_URI);
     app.listen(port, () => {
       console.log(`Server is listening on port ${port}`);
     });
