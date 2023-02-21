@@ -77,7 +77,7 @@ formDOM.addEventListener('submit', async (e) => {
     formAlertDOM.textContent = `success, task added`;
     formAlertDOM.classList.add('text-success');
   } catch (error) {
-    console.log(error);
+    console.log(error.response);
     formAlertDOM.style.display = 'block';
     formAlertDOM.innerHTML = `error, please try again`;
   }
